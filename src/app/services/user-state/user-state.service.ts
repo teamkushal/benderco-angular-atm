@@ -43,7 +43,7 @@ export class UserStateService {
         return true;
     }
 
-    public processWithdrawl = (amount: number): void => {
+    public processWithdrawal = (amount: number): void => {
         this._currentUser.accountBalance -= amount;
     }
 
