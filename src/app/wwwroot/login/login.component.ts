@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { AtmHistoryService } from 'src/app/services/atm-history/atm-history.service';
@@ -8,6 +8,15 @@ import { TransactionHistoryType, UserType } from 'src/app/enum/index.enum';
 import { UserStateService } from 'src/app/services/user-state/user-state.service';
 import { IUser } from 'src/app/interface/user.interface';
 import { TransactionHistory } from 'src/app/class/transaction-history';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        const isSubmitted = form && form.submitted;
+        return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    }
+}
 
 @Component({
     selector: 'app-login',
@@ -88,4 +97,11 @@ export class LoginComponent implements OnInit {
             }
         }
     }
+
+    emailFormControl = new FormControl('', [
+        Validators.required,
+        Validators.email,
+    ]);
+
+    matcher = new MyErrorStateMatcher();
 }
