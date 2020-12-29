@@ -9,12 +9,17 @@ import { UserStateService } from 'src/app/services/user-state/user-state.service
 })
 export class HeaderComponent implements OnInit {
 
+    public isLoggedIn: boolean = false;
+
     constructor(
         private _router: Router,
         private _userStateService: UserStateService
     ) { }
 
     ngOnInit(): void {
+        this._userStateService.getCurrentUserObs().subscribe(user => {
+            this.isLoggedIn = user ? true : false;
+        });
     }
 
     public logoutUser(): void {
