@@ -19,6 +19,7 @@ import { UserHistoryComponent } from './wwwroot/user/user-history/user-history.c
 import { UserLandingComponent } from './wwwroot/user/user-landing/user-landing.component';
 import { UserWithdrawComponent } from './wwwroot/user/user-withdraw/user-withdraw.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MaterialModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
