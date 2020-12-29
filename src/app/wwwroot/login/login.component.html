@@ -3,14 +3,19 @@
     <div class='login-processing' *ngIf='!!currentUser'>Processing</div>
     <div class='login-fail' *ngIf='!!currentUser'>Invalid Username/Password Combination
     </div>
-    <div class='input-group mb-3'>
+    <div class='input-group mb-3 row'>
         <input type='email' formControlName='userName' class='form-control' placeholder='User Name'
             aria-label='User Name'>
     </div>
-    <div class='input-group mb-3'>
-        <input type='checkbox' (click)='toggleShow()' [value]='show'>Show Password
+    <div class='input-group mb-3 row'>
         <input show-hide-input type='password' formControlName='password' class='form-control' placeholder='Password'
             aria-label='Password'>
+    </div>
+    <div class='input-group mb-3 row'>
+        <label for='showPassword' class='col-11'>
+            Show Password
+        </label>
+        <input type='checkbox' (click)='toggleShow()' [value]='show' id='showPassword' class='col-1'>
     </div>
     <div class='row'>
         <div class='col text-center'>
