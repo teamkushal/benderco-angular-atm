@@ -33,7 +33,7 @@ export class AtmStateService {
         return true;
     }
 
-    public processWithdrawl(amount: number): boolean {
+    public processWithdrawal(amount: number): boolean {
 
         const inventoryUsed: number[] = [];
 

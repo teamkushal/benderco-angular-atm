@@ -29,13 +29,13 @@ export class UserWithdrawComponent implements OnInit {
         });
     }
 
-    public processWithdrawl(): void {
+    public processWithdrawal(): void {
         this.withdrawlAmount = this.withdrawForm.controls['withdrawlAmount'].value;
         this.withdrawlSuccessFull = this._userStateService.withdrawlPossible(this.withdrawlAmount);
         if (this.withdrawlSuccessFull) {
-            this.withdrawlSuccessFull = this._atmStateService.processWithdrawl(this.withdrawlAmount);
+            this.withdrawlSuccessFull = this._atmStateService.processWithdrawal(this.withdrawlAmount);
             if (this.withdrawlSuccessFull) {
-                this._userStateService.processWithdrawl(this.withdrawlAmount)
+                this._userStateService.processWithdrawal(this.withdrawlAmount)
             }
         }
         this.logHistory();
