@@ -1,7 +1,8 @@
 <nav class="navbar">
     <div class="navbar-menu">
         <div class="navbar-end">
-            <button class="btn btn-outline-dark navbar-end" type="button" (click)=logoutUser()>Logout</button>
+            <button *ngIf="_userStateService.getCurrentUser()" class="btn btn-outline-dark navbar-end" type="button"
+                (click)=logoutUser()>Logout</button>
         </div>
     </div>
 </nav>
