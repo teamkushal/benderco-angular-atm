@@ -18,6 +18,7 @@ import { UserDepositComponent } from './wwwroot/user/user-deposit/user-deposit.c
 import { UserHistoryComponent } from './wwwroot/user/user-history/user-history.component';
 import { UserLandingComponent } from './wwwroot/user/user-landing/user-landing.component';
 import { UserWithdrawComponent } from './wwwroot/user/user-withdraw/user-withdraw.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { UserWithdrawComponent } from './wwwroot/user/user-withdraw/user-withdra
         AppRoutingModule,
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
